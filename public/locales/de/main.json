@@ -1,0 +1,61 @@
+{
+  "projectsHeader": "Projekte",
+  "projects": {
+    "imagegatherer": {
+      "title": "Image Gatherer",
+      "description": "Ein Tool zum Sammeln und Herunterladen von Bildern von Reddit",
+      "fullDescription": "Dieses Projekt ermöglicht Benutzern, Bilder von beliebigen Subreddits zu laden und herunterzuladen. Entwickelt mit Next.js, TypeScript und Reddit API-Integration."
+    },
+    "spacetrace": {
+      "title": "Space Trace",
+      "description": "Ein funktionsreiches 2D-Asteroids-Spiel mit einer moderneren Umsetzung, entwickelt in Unity",
+      "fullDescription": "Eine responsive Portfolio-Website, entwickelt mit Next.js, TypeScript und Tailwind CSS. Bietet Dark Mode, i18n-Unterstützung und animierte UI-Komponenten."
+    },
+    "tyriatracker": {
+      "title": "Tyria Tracker",
+      "description": "Täglicher/Wöchentlicher Aktivitäts-Tracker für das Spiel Guild Wars 2. Front- und Backend-Anwendung mit vollständigem Anmeldesystem und Datenbank.",
+      "fullDescription": "Entwickelte eine Full-Stack-Anwendung mit React, Node.js und PostgreSQL zur Verfolgung von Zielen und Echtzeit-Marktdaten in Guild Wars 2. Konzipierte eine Handelsposten-Funktion, die Preisdaten für über 20.000 Artikel alle 5 Minuten aktualisiert und über 24 Millionen Dateneinträge verwaltet. Entwickelte ein Datenbank-Optimierungssystem, das den Speicherbedarf um 70% reduziert und dabei wichtige Erkenntnisse für Analysen beibehält. Erreichte 95% Systemzuverlässigkeit durch effiziente Datenverarbeitung und robuste Fehlerbehandlung."
+    },
+    "notemaster": {
+      "title": "Note Master",
+      "description": "Erster Platz in einem Chrome-Erweiterungs-Hackathon über einen Zeitraum von 2 Wochen",
+      "fullDescription": "Eine Chrome-Erweiterung, die es Benutzern ermöglicht, bequem Notizen auf Websites zu erstellen. Ein benutzerfreundliches Kontextmenü ermöglicht schnelles und einfaches Erstellen und Bearbeiten von Notizen."
+    },
+    "hannulawells": {
+      "title": "Hannulawells",
+      "description": "Verschiedene CSS-Anpassungen und Ergänzungen basierend auf dem vom Kunden bereitgestellten Figma-Design.",
+      "fullDescription": "Verschiedene CSS-Anpassungen und Ergänzungen basierend auf dem vom Kunden bereitgestellten Figma-Design."
+    },
+    "viewOnGithub": "Auf GitHub ansehen",
+    "goto": "Gehe zu..."
+  },
+  "imageGatherer": {
+    "mainPage": {
+      "title": "Image Gatherer",
+      "description": "Suchen und sammeln Sie Bilder aus dem gesamten Web. Geben Sie einfach Ihre Suchbegriffe ein, durchsuchen Sie die Ergebnisse und speichern Sie Ihre Lieblingsbilder in Ihrer persönlichen Sammlung.",
+      "searchButton": "Suchen",
+      "search": "Subreddit durchsuchen",
+      "returnButton": "Startseite",
+      "howitworksTitle": "So funktioniert es",
+      "howitworksDescription": "Geben Sie Ihre Suchbegriffe in das obige Feld ein und klicken Sie auf Suchen. Durchsuchen Sie die Ergebnisse und klicken Sie auf ein Bild, um es Ihrer Sammlung hinzuzufügen. Besuchen Sie Ihre Sammlung jederzeit, um Ihre gespeicherten Bilder anzusehen oder zu verwalten.",
+      "featuresTitle": "Funktionen",
+      "features": {
+        "1": "• Schnelle Bildersuche",
+        "2": "• In persönlicher Sammlung speichern",
+        "3": "• Organisieren und kategorisieren"
+      }
+    },
+    "collection": {
+      "title": "Ihre Sammlung",
+      "backButton": "Zurück zur Suche",
+      "collectionTab": "Sammlung",
+      "favoritesTab": "Favoriten",
+      "collection.emptyMessage": "Noch keine Bilder, kehren Sie zurück und suchen Sie nach einem Subreddit-Namen!",
+      "favorites.emptyMessage": "Noch keine Favoriten, Sie können sie aus der Hauptsammlung auswählen",
+      "DownloadSelected": "Ausgewählte herunterladen",
+      "DownloadAll": "Alle herunterladen",
+      "sortAsc": "Größe aufsteigend",
+      "sortDesc": "Größe absteigend"
+    }
+  }
+}

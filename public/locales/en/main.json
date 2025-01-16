@@ -1,0 +1,61 @@
+{
+  "projectsHeader": "Projects",
+  "projects": {
+    "imagegatherer": {
+      "title": "Image Gatherer",
+      "description": "A tool to gather and download images from Reddit",
+      "fullDescription": "This project allows users to fetch and download images from any subreddit. Built with Next.js, TypeScript, and Reddit API integration."
+    },
+    "spacetrace": {
+      "title": "Space Trace",
+      "description": "A feature rich 2D Asteroids game with a more modern take developed in Unity",
+      "fullDescription": "A responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features dark mode, i18n support, and animated UI components."
+    },
+    "tyriatracker": {
+      "title": "Tyria Tracker",
+      "description": "Daily/Weekly activity tracker for the game Guild Wars 2. Front and Backend application with complete log in system and database.",
+      "fullDescription": "Built a full-stack application with React, Node.js, and PostgreSQL to track objectives and real-time market data in Guild Wars 2. Engineered a trading post feature that updates pricing data for 20,000+ items every 5 minutes, maintaining over 24 million data entries. Designed a database optimization system, reducing storage needs by 70% while retaining key insights for analytics. Achieved 95% system reliability, through efficient data processing and robust error handling."
+    },
+    "notemaster": {
+      "title": "Note Master",
+      "description": "First place in a chrome extension Hackathon over a 2 week duration",
+      "fullDescription": "A chrome extension that allows users to conveniently take notes on websites. An easy to use context menu allows quick and easy Note creation and editing."
+    },
+    "hannulawells": {
+      "title": "Hannulawells",
+      "description": "Performed various CSS adjustments and additions based on client provided figma design.",
+      "fullDescription": "Performed various CSS adjustments and additions based on client provided figma design."
+    },
+    "viewOnGithub": "View on GitHub",
+    "goto": "Go to..."
+  },
+  "imageGatherer": {
+    "mainPage": {
+      "title": "Image Gatherer",
+      "description": "Search and collect images from across the web. Simply enter your search terms, browse the results, and save your favorite images to your personal collection.",
+      "searchButton": "Search",
+      "search": "subreddit to search",
+      "returnButton": "Home",
+      "howitworksTitle": "How It Works",
+      "howitworksDescription": "Enter your search terms in the box above and click search. Browse through the results and click on any image to add it to your collection. Visit your collection anytime to view or manage your saved images.",
+      "featuresTitle": "Features",
+      "features": {
+        "1": "• Fast image search",
+        "2": "• Save to personal collection",
+        "3": "• Organize and categorize"
+      }
+    },
+    "collection": {
+      "title": "Your Collection",
+      "backButton": "Back to Search",
+      "collectionTab": "Collection",
+      "favoritesTab": "Favorites",
+      "collection.emptyMessage": "No images yet, return and search a sub reddit by name!",
+      "favorites.emptyMessage": "No favorites yet, you can add them by selecting them from the main collection",
+      "DownloadSelected": "Download selected",
+      "DownloadAll": "Download all",
+      "sortAsc": "Size Ascending",
+      "sortDesc": "Size Descending"
+    }
+  }
+}

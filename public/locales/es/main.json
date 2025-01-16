@@ -1,0 +1,61 @@
+{
+  "projectsHeader": "Proyectos",
+  "projects": {
+    "imagegatherer": {
+      "title": "Image Gatherer",
+      "description": "Una herramienta para recolectar y descargar imágenes de Reddit",
+      "fullDescription": "Este proyecto permite a los usuarios cargar y descargar imágenes de cualquier subreddit. Desarrollado con Next.js, TypeScript e integración con la API de Reddit."
+    },
+    "spacetrace": {
+      "title": "Space Trace",
+      "description": "Un juego tipo Asteroids en 2D con características modernas, desarrollado en Unity",
+      "fullDescription": "Un sitio web de portafolio responsivo, desarrollado con Next.js, TypeScript y Tailwind CSS. Ofrece modo oscuro, soporte i18n y componentes UI animados."
+    },
+    "tyriatracker": {
+      "title": "Tyria Tracker",
+      "description": "Rastreador de actividades diarias/semanales para el juego Guild Wars 2. Aplicación frontend y backend con sistema completo de inicio de sesión y base de datos.",
+      "fullDescription": "Desarrollé una aplicación full-stack con React, Node.js y PostgreSQL para rastrear objetivos y datos del mercado en tiempo real en Guild Wars 2. Diseñé una función de casa de subastas que actualiza los precios de más de 20,000 artículos cada 5 minutos y gestiona más de 24 millones de entradas de datos. Desarrollé un sistema de optimización de base de datos que reduce el uso de almacenamiento en un 70% mientras mantiene información crucial para análisis. Logré una fiabilidad del sistema del 95% mediante procesamiento eficiente de datos y manejo robusto de errores."
+    },
+    "notemaster": {
+      "title": "Note Master",
+      "description": "Primer lugar en un hackathon de extensiones de Chrome durante un período de 2 semanas",
+      "fullDescription": "Una extensión de Chrome que permite a los usuarios crear notas cómodamente en sitios web. Un menú contextual fácil de usar permite la creación y edición rápida y sencilla de notas."
+    },
+    "hannulawells": {
+      "title": "Hannulawells",
+      "description": "Varias personalizaciones y adiciones de CSS basadas en el diseño Figma proporcionado por el cliente.",
+      "fullDescription": "Varias personalizaciones y adiciones de CSS basadas en el diseño Figma proporcionado por el cliente."
+    },
+    "viewOnGithub": "Ver en GitHub",
+    "goto": "Ir a..."
+  },
+  "imageGatherer": {
+    "mainPage": {
+      "title": "Image Gatherer",
+      "description": "Busca y recolecta imágenes de toda la web. Simplemente ingresa tus términos de búsqueda, explora los resultados y guarda tus imágenes favoritas en tu colección personal.",
+      "searchButton": "Buscar",
+      "search": "Buscar subreddit",
+      "returnButton": "Inicio",
+      "howitworksTitle": "Cómo funciona",
+      "howitworksDescription": "Ingresa tus términos de búsqueda en el campo de arriba y haz clic en Buscar. Explora los resultados y haz clic en una imagen para agregarla a tu colección. Visita tu colección en cualquier momento para ver o gestionar tus imágenes guardadas.",
+      "featuresTitle": "Características",
+      "features": {
+        "1": "• Búsqueda rápida de imágenes",
+        "2": "• Guardar en colección personal",
+        "3": "• Organizar y categorizar"
+      }
+    },
+    "collection": {
+      "title": "Tu Colección",
+      "backButton": "Volver a la búsqueda",
+      "collectionTab": "Colección",
+      "favoritesTab": "Favoritos",
+      "collection.emptyMessage": "No hay imágenes aún, ¡regresa y busca un nombre de subreddit!",
+      "favorites.emptyMessage": "No hay favoritos aún, puedes seleccionarlos desde la colección principal",
+      "DownloadSelected": "Descargar seleccionados",
+      "DownloadAll": "Descargar todo",
+      "sortAsc": "Tamaño ascendente",
+      "sortDesc": "Tamaño descendente"
+    }
+  }
+}

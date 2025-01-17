@@ -107,8 +107,8 @@ export default function CollectionPage({ params }: TCollectionPageProps) {
             {t("imageGatherer.collection.backButton")}
           </Link>
         </div>
-        <div className="flex flex-row-reverse justify-between">
-          <div className="flex gap-4 mb-4">
+        <div className="flex  sm:flex-row-reverse flex-col justify-between">
+          <div className="flex sm:flex-row flex-col   gap-4 mb-4">
             {isLoading && (
               <div className="loader border-t-transparent border-solid animate-spin rounded-full border-orange-500 border-4 h-6 w-6"></div>
             )}
@@ -138,7 +138,7 @@ export default function CollectionPage({ params }: TCollectionPageProps) {
           <div className="flex gap-4 mb-4">
             <select
               onChange={handleSortOrderChange}
-              className="px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-900 text-gray-100 border border-orange-500"
+              className="px-4 py-2 rounded-lg sm:h-full h-[42px] w-full text-center sm:text-left   bg-zinc-800 hover:bg-zinc-900 text-gray-100 border border-orange-500"
               value={sortOrder}
             >
               <option value="asc">

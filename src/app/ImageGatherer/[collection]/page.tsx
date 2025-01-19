@@ -111,10 +111,6 @@ export default function CollectionPage({ params }: TCollectionPageProps) {
         </div>
         <div className="flex  sm:flex-row-reverse flex-col justify-between">
           <div className="flex sm:flex-row flex-col   gap-4 mb-4">
-            <div className="text-red-600 pl-6">
-              Downloading currently does not work - We&apos;re working on a fix,
-              sorry for the inconvenience
-            </div>
             {isLoading && (
               <div className="loader border-t-transparent border-solid animate-spin rounded-full border-orange-500 border-4 h-6 w-6"></div>
             )}

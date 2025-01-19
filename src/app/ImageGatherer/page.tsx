@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 export default function Page() {
   const { t } = useTranslation("main");
-  const [subreddit, setSubreddit] = useState("wallpaper");
+  const [subreddit, setSubreddit] = useState("");
   const router = useRouter();
 
   const handleFetch = () => {

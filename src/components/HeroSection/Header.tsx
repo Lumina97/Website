@@ -4,7 +4,7 @@ import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faFile, faMapPin } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import HeroTechStack from "./HeroTechStack";
 
 export const Header = () => {
@@ -24,10 +24,7 @@ export const Header = () => {
           <div className="flex flex-col gap-4">
             <div>
               <h1 className="text-5xl md:text-6xl">Erik Nivala</h1>
-              <h2 className="text-4xl md:text-5xl">
-                {" "}
-                React Front end developer
-              </h2>
+              <h2 className="text-4xl md:text-5xl"> Software Engineer</h2>
             </div>
             <div className="flex flex-row ite gap-2 text-">
               <div className="h-[1rem] flex justify-center items-center">

@@ -56,30 +56,32 @@ export default function CollectionPage({ params }: TCollectionPageProps) {
       ? images.map((image) => image.url.main)
       : selectedImages.map((image) => image.url.main);
 
-    try {
-      const response = await fetch("/api", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ links }),
-      });
+    const downloadImage = async (link: string, filename: string) => {
+      try {
+        const response = await fetch(link);
+        if (!response.ok) throw new Error("failed to download image");
+        const blob = await response.blob();
+        const atag = document.createElement("a");
+        atag.href = URL.createObjectURL(blob);
+        atag.download = filename;
 
-      if (!response.ok) {
-        throw new Error(`Error: ${response.statusText}`);
+        document.body.appendChild(atag);
+        atag.click();
+        document.body.removeChild(atag);
+        URL.revokeObjectURL(atag.href);
+      } catch (error) {
+        console.log(error);
       }
-      const blob = await response.blob();
-      const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = "files.zip";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    } catch (error) {
-      console.error("Error downloading ZIP:", error);
+    };
+
+    links.map(async (link) => {
+      const filename = `${collection}-${link}`;
+      await downloadImage(link, filename);
+    });
+
+    setTimeout(() => {
       setIsLoading(false);
-    }
-    setIsLoading(false);
+    }, 250);
   };
 
   const toggleModal = (url: string) => {
@@ -117,9 +119,8 @@ export default function CollectionPage({ params }: TCollectionPageProps) {
               onClick={() => {
                 handleDownloadClick(true);
               }}
-              className={`px-4 py-2 rounded-lg bg-zinc-800 ${
-                !isLoading && "active:scale-90"
-              } hover:bg-zinc-900 disabled:bg-zinc-950 disabled:text-gray-600 border-orange-500 border `}
+              className={`px-4 py-2 rounded-lg bg-zinc-800 ${!isLoading && "active:scale-90"
+                } hover:bg-zinc-900 disabled:bg-zinc-950 disabled:text-gray-600 border-orange-500 border `}
             >
               {t("imageGatherer.collection.DownloadAll")}
             </button>
@@ -128,9 +129,8 @@ export default function CollectionPage({ params }: TCollectionPageProps) {
               onClick={() => {
                 handleDownloadClick(false);
               }}
-              className={`px-4 py-2 rounded-lg bg-zinc-800 ${
-                !isLoading && " active:scale-90"
-              } hover:bg-zinc-900 disabled:bg-zinc-950 disabled:text-gray-600 border-orange-500 border`}
+              className={`px-4 py-2 rounded-lg bg-zinc-800 ${!isLoading && " active:scale-90"
+                } hover:bg-zinc-900 disabled:bg-zinc-950 disabled:text-gray-600 border-orange-500 border`}
             >
               {t("imageGatherer.collection.DownloadSelected")}
             </button>
@@ -163,18 +163,18 @@ export default function CollectionPage({ params }: TCollectionPageProps) {
         >
           {sortedImages.length > 0
             ? sortedImages.map((image) => {
-                return (
-                  <ImageCard
-                    onImageClick={toggleModal}
-                    onSelectClick={handleOnSelectChange}
-                    imageItem={image}
-                    key={image.url.main}
-                  />
-                );
-              })
+              return (
+                <ImageCard
+                  onImageClick={toggleModal}
+                  onSelectClick={handleOnSelectChange}
+                  imageItem={image}
+                  key={image.url.main}
+                />
+              );
+            })
             : [...Array(15)].map((_, index) => (
-                <SkeletonLoaderImageCards key={index} />
-              ))}
+              <SkeletonLoaderImageCards key={index} />
+            ))}
         </div>
       </div>
     </div>

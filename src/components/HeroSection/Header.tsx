@@ -4,7 +4,7 @@ import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faFile, faMapPin } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import HeroTechStack from "./HeroTechStack";
 
 export const Header = () => {

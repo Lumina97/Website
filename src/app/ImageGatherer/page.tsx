@@ -67,7 +67,7 @@ export default function Page() {
               {t("imageGatherer.mainPage.featuresTitle")}
             </h2>
             <ul className="text-gray-400 space-y-2">
-              <li>{t("imageGatherer.features.1")} </li>
+              <li>{t("imageGatherer.mainPage.features.1")} </li>
               <li>{t("imageGatherer.mainPage.features.2")}</li>
               <li>{t("imageGatherer.mainPage.features.3")}</li>
             </ul>

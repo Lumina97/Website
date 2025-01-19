@@ -46,38 +46,38 @@ export default function CollectionPage({ params }: TCollectionPageProps) {
     setSelectedImages((prev) => [...prev, image]);
   };
 
-  const handleSortOrderChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSortOrder(e.target.value as "asc" | "desc");
-  };
-
   const handleDownloadClick = async (downloadAll: boolean) => {
     setIsLoading(() => true);
     const links = downloadAll
       ? images.map((image) => image.url.main)
       : selectedImages.map((image) => image.url.main);
 
-    const downloadImage = async (link: string, filename: string) => {
-      try {
-        const response = await fetch(link);
-        if (!response.ok) throw new Error("failed to download image");
-        const blob = await response.blob();
-        const atag = document.createElement("a");
-        atag.href = URL.createObjectURL(blob);
-        atag.download = filename;
+    try {
+      const response = await fetch("/api", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ links }),
+      });
 
-        document.body.appendChild(atag);
-        atag.click();
-        document.body.removeChild(atag);
-        URL.revokeObjectURL(atag.href);
-      } catch (error) {
-        console.log(error);
+      if (!response.ok) {
+        throw new Error("Failed to fetch images");
       }
-    };
 
-    links.map(async (link) => {
-      const filename = `${collection}-${link}`;
-      await downloadImage(link, filename);
-    });
+      const data = await response.json();
+
+      data.images.forEach((image: { data: string }, index: number) => {
+        const a = document.createElement("a");
+        a.href = image.data;
+        a.download = `image_${index + 1}.jpg`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      });
+    } catch (error) {
+      console.error("Error sending image URLs:", error);
+    }
 
     setTimeout(() => {
       setIsLoading(false);
@@ -111,6 +111,10 @@ export default function CollectionPage({ params }: TCollectionPageProps) {
         </div>
         <div className="flex  sm:flex-row-reverse flex-col justify-between">
           <div className="flex sm:flex-row flex-col   gap-4 mb-4">
+            <div className="text-red-600 pl-6">
+              Downloading currently does not work - We&apos;re working on a fix,
+              sorry for the inconvenience
+            </div>
             {isLoading && (
               <div className="loader border-t-transparent border-solid animate-spin rounded-full border-orange-500 border-4 h-6 w-6"></div>
             )}
@@ -119,8 +123,9 @@ export default function CollectionPage({ params }: TCollectionPageProps) {
               onClick={() => {
                 handleDownloadClick(true);
               }}
-              className={`px-4 py-2 rounded-lg bg-zinc-800 ${!isLoading && "active:scale-90"
-                } hover:bg-zinc-900 disabled:bg-zinc-950 disabled:text-gray-600 border-orange-500 border `}
+              className={`px-4 py-2 rounded-lg bg-zinc-800 ${
+                !isLoading && "active:scale-90"
+              } hover:bg-zinc-900 disabled:bg-zinc-950 disabled:text-gray-600 border-orange-500 border `}
             >
               {t("imageGatherer.collection.DownloadAll")}
             </button>
@@ -129,15 +134,18 @@ export default function CollectionPage({ params }: TCollectionPageProps) {
               onClick={() => {
                 handleDownloadClick(false);
               }}
-              className={`px-4 py-2 rounded-lg bg-zinc-800 ${!isLoading && " active:scale-90"
-                } hover:bg-zinc-900 disabled:bg-zinc-950 disabled:text-gray-600 border-orange-500 border`}
+              className={`px-4 py-2 rounded-lg bg-zinc-800 ${
+                !isLoading && " active:scale-90"
+              } hover:bg-zinc-900 disabled:bg-zinc-950 disabled:text-gray-600 border-orange-500 border`}
             >
               {t("imageGatherer.collection.DownloadSelected")}
             </button>
           </div>
           <div className="flex gap-4 mb-4">
             <select
-              onChange={handleSortOrderChange}
+              onChange={(e) => {
+                setSortOrder(e.target.value as "asc" | "desc");
+              }}
               className="px-4 py-2 rounded-lg sm:h-full h-[42px] w-full text-center sm:text-left   bg-zinc-800 hover:bg-zinc-900 text-gray-100 border border-orange-500"
               value={sortOrder}
             >
@@ -163,18 +171,18 @@ export default function CollectionPage({ params }: TCollectionPageProps) {
         >
           {sortedImages.length > 0
             ? sortedImages.map((image) => {
-              return (
-                <ImageCard
-                  onImageClick={toggleModal}
-                  onSelectClick={handleOnSelectChange}
-                  imageItem={image}
-                  key={image.url.main}
-                />
-              );
-            })
+                return (
+                  <ImageCard
+                    onImageClick={toggleModal}
+                    onSelectClick={handleOnSelectChange}
+                    imageItem={image}
+                    key={image.url.main}
+                  />
+                );
+              })
             : [...Array(15)].map((_, index) => (
-              <SkeletonLoaderImageCards key={index} />
-            ))}
+                <SkeletonLoaderImageCards key={index} />
+              ))}
         </div>
       </div>
     </div>
